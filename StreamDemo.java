@@ -1,6 +1,5 @@
 package ThreadTest;
 
-import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.List;
 import java.util.function.Consumer;
@@ -14,7 +13,16 @@ public class StreamDemo {
         User user2=new User(12,"b",24);
         User user3=new User(13,"c",25);
         User user4=new User(14,"d",26);
-        List<User> list= Arrays.asList(user1,user2,user3,user4);
+        User user5=new User(16,"e",27);
+        List<User> list= Arrays.asList(user1,user2,user3,user4,user5);
+        //输出ID为偶数，年龄大于24，用户名转为大写，用户名倒排序,只输出一个用户名字
+        list.stream().filter(s->{return s.getId()%2==0;})
+                .filter(s->{return s.getAge()>24;})
+                .map(s->{return s.getUsername().toUpperCase();})
+                .sorted((o1,o2)->{return o2.compareTo(o1);})
+                .limit(1)
+                .forEach(System.out::println);
+
 
         //函数式接口：Function<T,R>, R apply(T,t)
         Function<String,Integer>function=new Function<String, Integer>() {
@@ -49,7 +57,7 @@ public class StreamDemo {
         consumer.accept("a");
         consumer1.accept("b");
 
-        //函数式接口：
+        //函数式接口：Supplier<T> String get()
         Supplier<String> supplier=new Supplier<String>() {
             @Override
             public String get() {
@@ -71,5 +79,26 @@ class User{
         this.id = id;
         this.username = username;
         this.age = age;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", username='" + username + '\'' +
+                ", age=" + age +
+                '}';
     }
 }
