@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="day03_eesy_01account" />
+        <module name="day02_eesy_01anno_ioc" />
+        <module name="day03_eesy_03springAOP" />
+        <module name="day01_eesy_01jdbc" />
+        <module name="day01_eesy_02spring" />
+        <module name="day03_eesy_04adviceType" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="day01_eesy_01jdbc" target="13" />
+      <module name="day01_eesy_02spring" target="13" />
+      <module name="day02_eesy_01anno_ioc" target="13" />
+      <module name="day03_eesy_01account" target="13" />
+      <module name="day03_eesy_03springAOP" target="13" />
+      <module name="day03_eesy_04adviceType" target="13" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
